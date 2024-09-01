@@ -1,7 +1,7 @@
 # Xiore Cipher
 The Xiore Cipher is a proprietary symmetric encryption algorithm designed for robust data security. It operates with a 256-bit key and employs multiple rounds of encryption to secure plaintext data. This algorithm features custom-designed encryption and decryption routines, which include key expansion, S-Box substitutions, and bitwise rotations.
 
-## Xiore Cipher is extremely challenging to decode without the correct key due to the following reasons:
+## Key Features:
 
 - **Rotation Operations**: The use of bitwise rotations (both left and right) introduces diffusion. This means that a change in one part of the plaintext will affect many parts of the ciphertext, making patterns harder to discern.
 - **Substitution (S-box)**: Xiore use an S-box for byte substitution, which introduces non-linearity into the cipher. This non-linearity is crucial because it makes the relationship between plaintext and ciphertext more complex and less predictable.
@@ -9,3 +9,28 @@ The Xiore Cipher is a proprietary symmetric encryption algorithm designed for ro
 - **256-bit Key**: A 256-bit key provides a vast key space, making brute-force attacks infeasible. The sheer number of possible keys (2^256) is astronomically large, making exhaustive search attacks impractical with current technology.
 - **Multiple Rounds**: The use of multiple rounds (10) enhances security by applying the encryption transformations several times. Each round compounds the complexity, making it harder for an attacker to reverse-engineer the process or find patterns.
 - **Custom Key Expansion**: Xiore's key expansion algorithm generates subkeys using XOR and bitwise rotations. While this method is non-standard, it can add complexity to the key schedule, making it harder to predict subkeys and increasing resistance to attacks like key recovery.
+
+## Usage
+
+To compile the code, use a C compiler such as gcc. Ensure you have OpenSSL installed for key generation.
+  ```bash
+  gcc -o xiore xiore.c -lssl -lcrypto
+  ```
+
+Xiore supports encryption and decryption modes:
+
+- **Encryption Mode**: Generates a random key and encrypts the provided message.
+- **Decryption Mode**: Decrypts a message using the provided 256-bit key.
+
+Command-Line Arguments:
+
+- **--encrypt**: Specify to encrypt the message.
+- **--decrypt**: Specify to decrypt the message.
+- **--message <message>**: The message to encrypt or decrypt.
+- **--key <key>**: The 256-bit key (in hexadecimal format) used for decryption.
+
+Encrypting a message:
+  ```bash
+  ./xiore --encrypt --message "Hello, World!"
+  ```
+*This will output the encrypted message and the generated 256-bit key.*
