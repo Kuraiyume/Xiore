@@ -34,3 +34,24 @@ Encrypting a message:
   ./xiore --encrypt --message "Hello, World!"
   ```
 *This will output the encrypted message and the generated 256-bit key.*
+
+Decrypting a message:
+  ```bash
+ ./xiore --decrypt --message <encrypted_message> --key <generated_key>
+  ```
+*Replace <encrypted_message> and <generated_key> with the actual values obtained during encryption.*
+
+## Limitations & Known Issues
+
+- **Experimental**: The Xiore Cipher is experimental and may not be fully secure. Some generated ciphers might be faulty. Double-check all operations to ensure accuracy.
+- **Not a Standard**: This algorithm does not comply with any established cryptographic standards.
+- **Responsibility**: The author is not responsible for any data loss or misuse.
+
+## License
+
+- This project is released under the GNU General Public License.
+
+## Author
+
+- Zephyr
+
