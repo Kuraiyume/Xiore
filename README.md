@@ -3,5 +3,5 @@ The Xiore Cipher is a proprietary symmetric encryption algorithm designed for ro
 
 ## Xiore Cipher is extremely challenging to decode without the correct key due to the following reasons:
 
-1. **Multiple Rounds**: The use of multiple encryption rounds ensures that the message is thoroughly scrambled. Each round applies key-dependent transformations, making the ciphertext increasingly difficult to decipher without the correct key.
-2. **Key-Dependent Operations**: The encryption process relies on key-dependent XOR operations, rotations, and S-Box substitutions. These operations are non-trivial to reverse, especially when compounded over multiple rounds.
+- **Multiple Rounds**: The use of multiple encryption rounds ensures that the message is thoroughly scrambled. Each round applies key-dependent transformations, making the ciphertext increasingly difficult to decipher without the correct key.
+- **Key-Dependent Operations**: The encryption process relies on key-dependent XOR operations, rotations, and S-Box substitutions. These operations are non-trivial to reverse, especially when compounded over multiple rounds.
